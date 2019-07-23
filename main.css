@@ -1,0 +1,17 @@
+body {
+    height: 100vh;
+    width: 100vh;
+    background-image: url(https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.melandramzi.com%2Ffile%2F2014%2F06%2Fcenote.jpg&f=1);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.back-face {
+    height: 150px;
+    width: 150px;
+}
+
+
+img {
+    width: 100px;
+}
