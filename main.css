@@ -40,7 +40,7 @@ h1 span {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    perspective: 1000px;
+    perspective: 2000px;
 }
 
 .card {
@@ -61,7 +61,7 @@ h1 span {
 }
 
 .card.flip {
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
     transition: transform 1s;
 }
 
@@ -73,7 +73,7 @@ h1 span {
 }
 
 .front-face {
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
     background: #bbd412;
     border-radius: 5px 15px;
 }
