@@ -2,6 +2,9 @@ const cards = document.querySelectorAll('.card');
 let firstCardFlipped = false;
 let firstCard, secondCard;
 let freezeBoard = false;
+let count = 0;
+
+window.onload = shuffle()
 
 function flipCard(){
     //prevent speed clicking
@@ -51,14 +54,27 @@ function resetCards() {
 function resetBoard() {
     [firstCardFlipped, freezeBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
+    count++
+    if(count === 10){
+        setTimeout(function() {
+            cards.forEach(function(card){
+                card.classList.remove('flip')
+                card.addEventListener('click', flipCard);
+            })
+            if(confirm('En Lakesh!')){
+                shuffle();
+                count = 0;
+            }
+        }, 1100)
+    }
 }
 
-(function shuffle() {
+function shuffle() {
     cards.forEach(function(card){
         let randomNum = Math.floor(Math.random() * 21);
         card.style.order = randomNum;
     });
-})();
+};
 
 cards.forEach(function(card){
     card.addEventListener('click', flipCard);
