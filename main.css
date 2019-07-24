@@ -1,17 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    height: 100vh;
-    width: 100vh;
+    width: 100%;
     background-image: url(https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.melandramzi.com%2Ffile%2F2014%2F06%2Fcenote.jpg&f=1);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1 {
+    text-align: center;
+    font-family:'Darker Grotesque', sans-serif;
+    font-size: 3rem;
+}
+
+h1 span {
+    background-color: aquamarine;
+    border-radius: 10%;
+}
+
+hr {
+    width: 50%;
+    position: absolute;
+    left: 25%;
+}
+
+.game_board {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(20% - 5px);
+    height: calc(25% - 2px);
+    position: relative;
+    transform: scale(1);
+}
+
+.card:active{
+    transform: scale(.95);
+    transition: transform .2s;
+}
+.front-face,
+.back-face {
+    position: absolute;
+    padding: 20px;
+    border-radius: 15px 5px;
 }
 
 .back-face {
-    height: 150px;
-    width: 150px;
-}
-
-
-img {
-    width: 100px;
+    background: #bbd412;
+    height: 175px;
+    width: 175px;
 }
