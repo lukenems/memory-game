@@ -1,13 +1,14 @@
 const cards = document.querySelectorAll('.card');
-
 let firstCardFlipped = false;
 let firstCard, secondCard;
 let freezeBoard = false;
 
-
 function flipCard(){
+    //prevent speed clicking
     if(freezeBoard) return;
+    //prevent double clicking
     if(this === firstCard) return;
+
     this.classList.add('flip')
 
     if(!firstCardFlipped){
@@ -20,7 +21,6 @@ function flipCard(){
     firstCardFlipped = false;
     secondCard = this;
     checkForMatch()
-
 }
 
 function checkForMatch() {
@@ -52,6 +52,13 @@ function resetBoard() {
     [firstCardFlipped, freezeBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
 }
+
+(function shuffle() {
+    cards.forEach(function(card){
+        let randomNum = Math.floor(Math.random() * 21);
+        card.style.order = randomNum;
+    });
+})();
 
 cards.forEach(function(card){
     card.addEventListener('click', flipCard);

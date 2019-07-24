@@ -5,12 +5,18 @@
         <title>Dreamspell Memory Game</title>
         <link rel="stylesheet" href="main.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Bungee+Outline&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     </head>
 
     <body>
-        <h1><span>Mayan Glyph - Memory Game</span></h1>
-        <div id="break"></div>
-        <div class="game_board">
+        <div class="landing">
+            <div class="break" id='top-dragon'></div>
+            <h1><span>Mayan Glyph Memory Game</span></h1>
+            <a href="#game_board"><i class="material-icons">expand_more</i></a>
+            <div class="break"></div>
+        </div>
+        <div id="game_board" class="game_board">
             <div class="card" data-glyph='serpant'>
                 <img class="front-face" src="imgs/Serpant.GIF" alt="serpant">
                 <img class="back-face" src="imgs/avatars_wheel.png" alt="memory-card">

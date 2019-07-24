@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -12,18 +13,30 @@ body {
     background-attachment: fixed;
 }
 
-h1 {
-    text-align: center;
-    font-family: 'Bungee Outline', cursive;
-    font-size: 3rem;
+.landing {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-h1 span {
-    background-color: aquamarine;
+h1 {
+    font-family: 'Bungee Outline';
+    font-size: 4rem;
+}
+
+h1 span, h3 {
+    background-color: #7fffd4;
     border-radius: 10%;
 }
 
-#break{
+i {
+    background-color: #7fffd4;
+    border-radius: 50%;
+}
+
+.break{
     width: 100%;
     height: 75px;
     margin: auto;
@@ -32,11 +45,18 @@ h1 span {
     background-image: url(https://cdn.pixabay.com/photo/2013/07/12/12/30/snake-145808_960_720.png);
     background-size: 150px;
     background-repeat: repeat-x;
+    background-position: 0px 0px;
+    animation: dancingDragons 40s linear infinite;
+}
+
+#top-dragon {
+    transform: scaleX(-1);
 }
 
 .game_board {
-    width: 100%;
+    width: 80%;
     height: 800px;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -83,4 +103,9 @@ h1 span {
     height: 175px;
     width: 175px;
     border-radius: 15px 5px;
+}
+
+@keyframes dancingDragons {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
 }
