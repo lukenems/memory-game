@@ -2,9 +2,13 @@ const cards = document.querySelectorAll('.card');
 
 let firstCardFlipped = false;
 let firstCard, secondCard;
+let freezeBoard = false;
+
 
 function flipCard(){
-    this.classList.toggle('flip')
+    if(freezeBoard) return;
+    if(this === firstCard) return;
+    this.classList.add('flip')
 
     if(!firstCardFlipped){
         //first click
@@ -31,13 +35,22 @@ function checkForMatch() {
 function matchingPair() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+
+    resetBoard()
 }
 
 function resetCards() {
+    freezeBoard = true;
     setTimeout(function(){
         firstCard.classList.remove('flip')
         secondCard.classList.remove('flip')
+        freezeBoard = false;
     }, 1250)
+}
+
+function resetBoard() {
+    [firstCardFlipped, freezeBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
 }
 
 cards.forEach(function(card){
