@@ -14,7 +14,7 @@ body {
 
 h1 {
     text-align: center;
-    font-family:'Darker Grotesque', sans-serif;
+    font-family: 'Bungee Outline', cursive;
     font-size: 3rem;
 }
 
@@ -23,10 +23,15 @@ h1 span {
     border-radius: 10%;
 }
 
-hr {
-    width: 50%;
-    position: absolute;
-    left: 25%;
+#break{
+    width: 100%;
+    height: 75px;
+    margin: auto;
+    display: inline-block;
+    background-color: blueviolet;
+    background-image: url(https://cdn.pixabay.com/photo/2013/07/12/12/30/snake-145808_960_720.png);
+    background-size: 150px;
+    background-repeat: repeat-x;
 }
 
 .game_board {
